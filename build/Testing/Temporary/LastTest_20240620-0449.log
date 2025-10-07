@@ -1,0 +1,59 @@
+Start testing: Jun 20 13:06 India Standard Time
+----------------------------------------------------------
+1/1 Testing: ExampleTests
+1/1 Test: ExampleTests
+Command: "D:/Example/build/test/ExampleTests.exe"
+Directory: D:/Example/build/test
+"ExampleTests" start time: Jun 20 13:06 India Standard Time
+Output:
+----------------------------------------------------------
+Running main() from D:\Example\googletest\googletest\src\gtest_main.cc
+[==========] Running 16 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 16 tests from ExampleTests_T
+[ RUN      ] ExampleTests_T.mirror_fold
+[       OK ] ExampleTests_T.mirror_fold (0 ms)
+[ RUN      ] ExampleTests_T.mirror_fold1
+[       OK ] ExampleTests_T.mirror_fold1 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_selection
+[       OK ] ExampleTests_T.mirror_selection (0 ms)
+[ RUN      ] ExampleTests_T.mirror_selection1
+[       OK ] ExampleTests_T.mirror_selection1 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control
+[       OK ] ExampleTests_T.mirror_control (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control1
+[       OK ] ExampleTests_T.mirror_control1 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control2
+[       OK ] ExampleTests_T.mirror_control2 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control3
+[       OK ] ExampleTests_T.mirror_control3 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control4
+[       OK ] ExampleTests_T.mirror_control4 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control5
+[       OK ] ExampleTests_T.mirror_control5 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control6
+[       OK ] ExampleTests_T.mirror_control6 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control7
+[       OK ] ExampleTests_T.mirror_control7 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control8
+[       OK ] ExampleTests_T.mirror_control8 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control9
+[       OK ] ExampleTests_T.mirror_control9 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control10
+[       OK ] ExampleTests_T.mirror_control10 (0 ms)
+[ RUN      ] ExampleTests_T.mirror_control11
+[       OK ] ExampleTests_T.mirror_control11 (0 ms)
+[----------] 16 tests from ExampleTests_T (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 16 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 16 tests.
+<end of output>
+Test time =   0.07 sec
+----------------------------------------------------------
+Test Passed.
+"ExampleTests" end time: Jun 20 13:06 India Standard Time
+"ExampleTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 20 13:06 India Standard Time

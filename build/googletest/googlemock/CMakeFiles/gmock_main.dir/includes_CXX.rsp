@@ -1,0 +1,1 @@
+-isystem D:/Example/googletest/googlemock/include -isystem D:/Example/googletest/googlemock -isystem D:/Example/googletest/googletest/include -isystem D:/Example/googletest/googletest
