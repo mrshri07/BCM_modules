@@ -1,0 +1,35 @@
+Start testing: Jun 20 10:44 India Standard Time
+----------------------------------------------------------
+1/1 Testing: ExampleTests
+1/1 Test: ExampleTests
+Command: "D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/build/tests/ExampleTests.exe"
+Directory: D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/build/tests
+"ExampleTests" start time: Jun 20 10:44 India Standard Time
+Output:
+----------------------------------------------------------
+Running main() from D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/googletest/googletest/src/gtest_main.cc
+[==========] Running 4 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 4 tests from ExampleTests_T
+[ RUN      ] ExampleTests_T.low_beam_light
+[       OK ] ExampleTests_T.low_beam_light (0 ms)
+[ RUN      ] ExampleTests_T.low_beam_light1
+[       OK ] ExampleTests_T.low_beam_light1 (0 ms)
+[ RUN      ] ExampleTests_T.high_beam_light
+[       OK ] ExampleTests_T.high_beam_light (0 ms)
+[ RUN      ] ExampleTests_T.high_beam_light1
+[       OK ] ExampleTests_T.high_beam_light1 (0 ms)
+[----------] 4 tests from ExampleTests_T (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 4 tests.
+<end of output>
+Test time =   0.04 sec
+----------------------------------------------------------
+Test Passed.
+"ExampleTests" end time: Jun 20 10:44 India Standard Time
+"ExampleTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 20 10:44 India Standard Time

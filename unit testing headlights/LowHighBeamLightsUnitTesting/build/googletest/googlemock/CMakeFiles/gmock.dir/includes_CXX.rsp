@@ -1,0 +1,1 @@
+-I"D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/googletest/googlemock/include" -I"D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/googletest/googlemock" -isystem "D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/googletest/googletest/include" -isystem "D:/C-Programming/Module1/LowHighBeamLightsUnitTesting/googletest/googletest"

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240618-1046-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.29.0-rc2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="Rupa"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="8"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="19813"
+	TotalPhysicalMemory="5989"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2096"
+	>
+	<Testing>
+		<StartDateTime>Jun 18 17:32 India Standard Time</StartDateTime>
+		<StartTestTime>1718712129</StartTestTime>
+		<TestList>
+			<Test>./tests/ExampleTests</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>ExampleTests</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/ExampleTests</FullName>
+			<FullCommandLine>D:\C-Programming\Module1\Examples\build\tests\ExampleTests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0226697</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\C-Programming\Module1\Examples\build\tests\ExampleTests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJx1TT0LwjAU3PMrbmwHQ10FB7EdhdKOjUiIMQTyEskH+PNtqRQdvOXu8e5jKN5bb0DS+qrGIwZCexDnXR+DiZJofopLuBen96J7SXo6nYQJwTiddcrfMkUlzKJuSxtXik3HDVcMn6kGiyetW+uBVOzM/Dfw34goPUfVgBJyyNLVbAL60zh2LbAlOXsDnltLKA==</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jun 18 17:32 India Standard Time</EndDateTime>
+		<EndTestTime>1718712129</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
