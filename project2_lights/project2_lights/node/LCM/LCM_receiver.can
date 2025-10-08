@@ -1,0 +1,187 @@
+﻿
+/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  int  ignition_key;
+  int Hazard_swt;
+  int direction_swt;
+  int DRL_swt;
+  int position_swt;
+  int low_beam_swt;
+  int high_beam_swt;
+  int left_direction_light;
+  int right_direction_light;
+  msTimer direction_light_timer;
+int  hazard_swt;
+}
+
+
+
+
+on message ignition_Message
+{
+  if(this.ignition_Signal==1)
+  {
+    ignition_key=1;
+  }
+  else if(this.ignition_Signal==2)
+  {
+    ignition_key=2;
+  }
+  else if(this.ignition_Signal==3)
+  {
+    ignition_key=3;
+  }
+  else
+  {
+    ignition_key=0;
+  }
+}
+on message exterior_Message
+{
+  if(this.position_swt_Signal==1)
+  {
+    position_swt=1;
+    @position_light::position_light=1;
+  }
+   else
+  {
+     position_swt=0;
+     @position_light::position_light=0;
+   }  
+   
+  if(this.low_beam_Signal==1)
+  {
+    low_beam_swt=1;  
+    @low_beam_light::low_beam_light=1;
+  }
+  else
+  {
+    
+     low_beam_swt=0;
+     @low_beam_light::low_beam_light=0;
+  }
+   if(this.high_beam_swt_Signal==1)
+  {
+    high_beam_swt=1;
+    @high_beam_light::high_beam_light=1;
+  }
+  else
+  {
+    
+     high_beam_swt=0;
+    @high_beam_light::high_beam_light=0;
+  }
+  
+
+  if(this.Hazard_swt_Signal==1)
+  {
+    Hazard_swt=1;
+    @hazard_swt::hazard_swt=1;
+
+   
+  }
+  else 
+  {
+    Hazard_swt=0;
+     @hazard_swt::hazard_swt=0;
+
+  }
+ 
+  if(this.direction_swt_Signal==1)
+  {
+    direction_swt=1;
+     @left_direction_light::left_direction_light=1;
+     @left_DRL::left_DRL=0;
+  }
+  else
+  {
+    direction_swt=0;
+     @left_direction_light::left_direction_light=0;
+     @left_DRL::left_DRL=1;
+  }
+  if(this.direction_swt_Signal==2)
+  {
+     direction_swt=2;
+     @right_direction_light::right_direction_light=1;
+    @right_DRL::right_DRL=0;
+  }
+  else
+  {
+    direction_swt=0;
+     @right_direction_light::right_direction_light=0;
+    @right_DRL::right_DRL=1;
+  }
+  if(@ignition_key::ignition_key==0)
+  {
+    @left_DRL::left_DRL=0;
+    @right_DRL::right_DRL=0;
+  }
+  if(@ignition_key::ignition_key==1)
+  {
+    if(@hazard_swt::hazard_swt==1)
+    {
+      @left_DRL::left_DRL=0;
+      @right_DRL::right_DRL=0;
+      @left_direction_light::left_direction_light=1;
+      @right_direction_light::right_direction_light=1;
+    }
+    
+  }
+  
+//  if(this.DRL_swt_Signal==1)
+//  {
+//    DRL_swt=1;
+//    @DRL_swt::DRL_swt=1;
+//  }
+//  else if(this.DRL_swt_Signal==2)
+//  {
+//     DRL_swt=2;
+//    @DRL_swt::DRL_swt=2;
+//  }
+//  else 
+//  {
+//     DRL_swt=0;
+//    @DRL_swt::DRL_swt=0;
+//  }
+  
+}
+on timer direction_light_timer
+{
+if($ignition_Signal==1)
+{  
+  if($direction_swt_Signal==1)
+  {    
+   
+    @right_direction_light::right_direction_light=0;
+     @left_direction_light::left_direction_light=1; 
+
+     @left_direction_light::left_direction_light=0; 
+  }
+
+  else if($direction_swt_Signal==2 )
+  {    
+    @left_direction_light::left_direction_light=0;  
+    @right_direction_light::right_direction_light=1;
+    @right_direction_light::right_direction_light=0;
+  }
+ }
+
+ 
+
+   
+ 
+}
+
+
+
+on start 
+{
+  setTimerCyclic(direction_light_timer,100);
+
+}

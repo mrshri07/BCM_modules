@@ -1,0 +1,341 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message exterior_Message exterior_ipt;
+  message wiper_washer_Message wpr_washer;
+  message 0x4 mirr_messa;
+  int Exterior;
+  int position;
+  int low_beam;
+  int high_beam;
+  int hazard_swt;
+  int DRL_swt;
+  int direction_swt;
+  int ignition_key;
+  int left_direction_light;
+  int right_direction_light; 
+  int  wiper_washer;
+  msTimer exterior_timer;
+  msTimer wiper_washer_timer;
+  msTimer side_view_mirror_timer;
+  int  mirror_folding;
+  int  selection_swt;
+   word mirror_data;
+  enum mirror_control{NC,up,DN,left,right};
+  enum mirror_control mc=NC;
+ 
+}
+on sysvar head_light_swt::head_light_swt
+{
+ if($ignition_Signal==1)
+  {
+   if(@head_light_swt::head_light_swt==1)
+   { 
+      position=1;
+      low_beam=0;
+      high_beam=0;
+    write("position swt is ON");
+   }
+ 
+   else if(@head_light_swt::head_light_swt==2)
+   {
+     position=1;
+     low_beam=1;
+     high_beam=0;
+    
+    write("lowbeam swt is ON");
+    
+   }
+   else if(@head_light_swt::head_light_swt==3)
+   { 
+     position=1;
+     low_beam=1;
+     high_beam=1;
+     write("highbeam swt is ON");
+   }
+  
+   else
+   {
+     position=0;
+     low_beam=0;
+     high_beam=0;
+     write("position swt is OFF");
+   }
+  }
+ 
+}
+on sysvar hazard_swt::hazard_swt
+{
+  if(@hazard_swt::hazard_swt==1)
+  {
+    hazard_swt=1;
+    write("hazard swt is ON");
+  }
+  else
+  {
+    hazard_swt=0;
+    write("hazard swt is OFF");
+  }
+ 
+}
+
+on sysvar direction_swt::direction_swt
+{
+  if($ignition_Signal==1)
+
+ {
+   if(@direction_swt::direction_swt==1)
+   {
+     direction_swt=1;
+     write("direction_swt is left");
+
+     
+   }
+  else if(@direction_swt::direction_swt==2)
+   {
+    direction_swt=2;
+
+     
+    write("direction_swt is right");
+   }
+   else
+   {
+    direction_swt=0;
+
+    write("direction_swt is off");
+   }
+ 
+}
+}
+  
+ on timer exterior_timer
+{
+  exterior_ipt.position_swt_Signal=position;
+  exterior_ipt.low_beam_Signal=low_beam;
+  exterior_ipt.high_beam_swt_Signal=high_beam;
+  exterior_ipt.Hazard_swt_Signal= hazard_swt; 
+  exterior_ipt.DRL_swt_Signal=DRL_swt;
+
+ exterior_ipt.direction_swt_Signal=direction_swt;
+  output(exterior_ipt);
+
+ 
+}
+
+on message ignition_Message
+{
+  if(this.ignition_Signal==1)
+  {
+    ignition_key=1;
+    write("accessary");
+  }
+  else if(this.ignition_Signal==2)
+  {
+     ignition_key=2;
+     write("ON");
+  }
+  else if(this.ignition_Signal==3)
+  {
+    ignition_key=3;
+         write("start");
+  }
+  else
+  {
+     ignition_key=0;
+     write("lock");
+    
+  }
+  
+}
+
+on sysvar wiper_washer::wiper_washer
+{
+  if(@ignition_key::ignition_key==1)
+  {
+   switch(@wiper_washer::wiper_washer)
+   {
+    case 1:
+         wiper_washer=1;
+      write("wiper washer is int position");
+    break;
+    case 2:
+         wiper_washer=2;
+      write("wiper washer is low position");
+    break;
+    case 3:
+        wiper_washer=3;
+      write("wiper washer is high position");
+    break;
+    default:
+        wiper_washer=0;  
+      write("wiper washer is OFF position");
+  }
+  }
+}
+
+on sysvar mirror_folding_swt::mirror_folding_swt
+{ 
+  if($ignition_Signal==1)
+  {
+   if(@mirror_folding_swt::mirror_folding_swt==1)
+   {
+     mirror_folding=1;
+   }
+   else
+   {
+     mirror_folding=0;
+   }
+  }
+}
+on sysvar selection_swt::selection_swt
+{
+   if($ignition_Signal==1)
+   {
+     if($folding_Signal==1)
+     {
+       if(@selection_swt::selection_swt==1)
+       {
+        selection_swt=1;//nuetral
+        write("mirror selection swt is nuetral");
+       }
+       else if(@selection_swt::selection_swt==2)
+       {
+        selection_swt=2;//right
+        write("mirror selection swt is right");
+       }
+       else
+       {
+        selection_swt=0;//left
+        write("mirror selection swt is left");
+       }
+     }
+   }  
+}
+on sysvar up_controle_swt::up_controle_swt
+{
+   if($ignition_Signal==1)
+   {
+     if($folding_Signal==1) // mirror is unfolding
+     {
+       if($selection_swt_Signal==0) //mirror selection is left
+       {
+         if(@up_controle_swt::up_controle_swt==1)
+         {
+          mc=up;
+         } 
+         else
+         {
+           mc=NC;
+         }
+       }
+     }
+   }  
+}
+on sysvar down_controle_swt::down_controle_swt
+{
+   if($ignition_Signal==1)
+   {
+     if($folding_Signal==1)  // mirror is unfolding
+     {
+      if($selection_swt_Signal==0) //mirror selection is left
+       {
+        if(@down_controle_swt::down_controle_swt==1)
+        {
+         mc=DN;
+        }
+        else
+        {
+        mc=NC;
+        }
+      }
+    }
+  }
+}
+on sysvar left_controle_swt::left_controle_swt
+{
+  if($ignition_Signal==1)
+  {
+   if($folding_Signal==1) // mirror is unfolding
+   {
+     if($selection_swt_Signal==0) //mirror selection is left
+     {
+      if(@left_controle_swt::left_controle_swt==1)
+      {
+        mc=left;
+      }
+      else
+      {
+      mc=NC;
+      }
+     }
+   } 
+  } 
+}
+on sysvar right_controle_swt::right_controle_swt
+{
+   if($ignition_Signal==1)
+   {
+     if($folding_Signal==1) // mirror is unfolding
+     {  
+      if($selection_swt_Signal==0) //mirror selection is left
+      {
+       if(@right_controle_swt::right_controle_swt==1)
+       {
+        mc=right;  
+       }
+       else
+       {
+        mc=NC;
+       }
+     }
+   }  
+  }      
+}
+
+
+
+on timer side_view_mirror_timer
+{
+  
+ 
+  mirr_messa.DLC=2;
+  mirr_messa.word(0)=0;
+  mirror_data=0;
+//  mirror_data=mirror_data |((word) selection_swt);
+//  mirror_data=(word)(mirror_data << 11);
+//  mirror_data=(word)(mirror_data |( (word) mirror_folding << 5));
+//  mirror_data=mirror_data|mc;
+
+   mirror_data=   mirror_data |( (word) mc);
+   mirror_data = (word)(mirror_data<< 11);
+  mirror_data =(word)( mirror_data | (word)mirror_folding<<4);
+//  //mirror_data = (word)(mirror_data<<4);
+//  // mirror_data=   (word)(mirror_data |( (word) mirror_folding << 4));
+//   mirror_data=    mirror_data|selection_swt;
+ //  mirr_messa.word(0)=    mirror_data;
+ mirror_data=    mirror_data|selection_swt;
+ // mirror_data =(word)( mirror_data | (word)mirror_folding<<4);
+  // mirror_data=    mirror_data|selection_swt;
+//  mirror_data=(word)(mirror_data | (word)mc<<9);
+  mirr_messa.word(0)=    mirror_data;
+  output(mirr_messa);
+}
+
+on timer wiper_washer_timer
+{
+  wpr_washer.wiper_washer_Signal=wiper_washer;
+  output(wpr_washer);
+}
+on start
+{
+  setTimerCyclic(exterior_timer,200);
+ 
+  setTimerCyclic(wiper_washer_timer,200);
+  setTimerCyclic(side_view_mirror_timer,100);
+  @selection_swt::selection_swt=1;
+}

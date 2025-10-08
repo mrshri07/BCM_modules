@@ -1,0 +1,97 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BCM combi LCM
+VAL_TABLE_ down_control_Value_Table 3 "NA" 2 "error" 1 "off" 0 "on" ;
+VAL_TABLE_ up_control_Value_Table 3 "NA" 2 "error" 1 "off" 0 "on" ;
+VAL_TABLE_ left_control_Value_Table 3 "NA" 2 "error" 1 "off" 0 "on" ;
+VAL_TABLE_ right_control_Value_Table 3 "NA" 2 "error" 1 "off" 0 "on" ;
+VAL_TABLE_ folding_Value_Table 3 "not available" 2 "error" 1 "unfolding" 0 "folding" ;
+VAL_TABLE_ selection_swt_Value_Table 3 "not available" 2 "error" 1 "right" 0 "left" ;
+VAL_TABLE_ control_swt_Value_Table 5 "not available" 4 "error" 3 "down" 2 "up" 1 "right" 0 "left" ;
+VAL_TABLE_ power_window_down_Value_Table 3 "not available" 2 "error" 1 "power_window_down_on" 0 "power_window_down_off" ;
+VAL_TABLE_ power_window_up_Value_Table 3 "not available" 2 "error" 1 "power_window_up_on" 0 "power_window_up_off" ;
+VAL_TABLE_ wiper_washer_Value_Table 5 "not applicable" 4 "error" 3 "wiper_washer_high" 2 "wiper_washer_low" 1 "wiper_washer_INT" 0 "wiper_washer_OFF" ;
+VAL_TABLE_ ignition_Signal 5 "gnition_not available" 4 "gnition_error" 3 "gnition_start" 2 "gnition_ON" 1 "gnition_Accessary" 0 "gnition_Lock" ;
+VAL_TABLE_ position_swt_Signal 3 "position_swt_not available" 2 "position_swt_error" 1 "position_swt_OFF" 0 "position_swt_ON" ;
+VAL_TABLE_ low_beam_swt_Signal 3 "low_beam_swt_not available" 2 "low_beam_swt_error" 1 "low_beam_swt_OFF" 0 "low_beam_swt_ON" ;
+VAL_TABLE_ high_beam_swt_Signal 3 "high_beam_swt_not available" 2 "high_beam_swt_error" 1 "high_beam_swt_OFF" 0 "high_beam_swt_ON" ;
+VAL_TABLE_ Hazard_swt_Signal 3 "Hazard_swt_not available" 2 "Hazard_swt_error" 1 "Hazard_swt_OFF" 0 "Hazard_swt_ON" ;
+VAL_TABLE_ DRL_swt_Signal 3 "DRL_swt_not available" 2 "DRL_swt_error" 1 "DRL_swt_OFF" 0 "DRL_swt_ON" ;
+VAL_TABLE_ direction_swt_signal 4 "direction_swt_not available" 3 "direction_swt_error" 2 "direction_swt_ON" 1 "direction_swt_right" 0 "direction_swt_left" ;
+
+
+BO_ 4 side_view_mirror_Message: 2 Vector__XXX
+ SG_ control_swt_Signal : 11|3@1+ (1,0) [0|5] "" Vector__XXX
+ SG_ selection_swt_Signal : 0|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ folding_Signal : 4|3@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 0 power_window_Message: 1 Vector__XXX
+ SG_ power_window_down_Signal : 3|3@1+ (1,0) [0|2] "" Vector__XXX
+ SG_ power_window_up_Signal : 0|3@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 3 ignition_Message: 1 BCM
+ SG_ ignition_Signal : 0|3@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 2 wiper_washer_Message: 1 combi
+ SG_ wiper_washer_Signal : 0|3@1+ (1,0) [0|3] "" Vector__XXX
+
+BO_ 1 exterior_Message: 3 combi
+ SG_ position_swt_Signal : 19|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ low_beam_Signal : 16|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ high_beam_swt_Signal : 11|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ Hazard_swt_Signal : 8|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DRL_swt_Signal : 3|3@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ direction_swt_Signal : 0|3@1+ (1,0) [0|4] "" Vector__XXX
+
+
+
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 4 control_swt_Signal 5 "not available" 4 "error" 3 "down" 2 "up" 1 "right" 0 "left" ;
+VAL_ 4 selection_swt_Signal 3 "not available" 2 "error" 1 "right" 0 "left" ;
+VAL_ 4 folding_Signal 3 "not available" 2 "error" 1 "unfolding" 0 "folding" ;
+VAL_ 0 power_window_down_Signal 3 "not available" 2 "error" 1 "power_window_down_on" 0 "power_window_down_off" ;
+VAL_ 0 power_window_up_Signal 3 "not available" 2 "error" 1 "power_window_up_on" 0 "power_window_up_off" ;
+VAL_ 3 ignition_Signal 5 "gnition_not available" 4 "gnition_error" 3 "gnition_start" 2 "gnition_ON" 1 "gnition_Accessary" 0 "gnition_Lock" ;
+VAL_ 1 position_swt_Signal 3 "position_swt_not available" 2 "position_swt_error" 1 "position_swt_OFF" 0 "position_swt_ON" ;
+VAL_ 1 low_beam_Signal 3 "low_beam_swt_not available" 2 "low_beam_swt_error" 1 "low_beam_swt_OFF" 0 "low_beam_swt_ON" ;
+VAL_ 1 high_beam_swt_Signal 3 "high_beam_swt_not available" 2 "high_beam_swt_error" 1 "high_beam_swt_OFF" 0 "high_beam_swt_ON" ;
+VAL_ 1 Hazard_swt_Signal 3 "Hazard_swt_not available" 2 "Hazard_swt_error" 1 "Hazard_swt_OFF" 0 "Hazard_swt_ON" ;
+VAL_ 1 DRL_swt_Signal 3 "DRL_swt_not available" 2 "DRL_swt_error" 1 "DRL_swt_OFF" 0 "DRL_swt_ON" ;
+VAL_ 1 direction_swt_Signal 4 "direction_swt_not available" 3 "direction_swt_error" 2 "direction_swt_ON" 1 "direction_swt_right" 0 "direction_swt_left" ;
+
