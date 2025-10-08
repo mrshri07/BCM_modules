@@ -1,0 +1,70 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message Ignition_Input ignition_msg;
+  int ignition_input;
+  msTimer ignition_timer;
+}
+on sysvar Ignition_swt::Ignition_swt
+{
+  if(@Ignition_swt::Ignition_swt==1)
+  {
+    ignition_input=1;
+    write("ignition is in living mode");
+  }
+ else if(@Ignition_swt::Ignition_swt==2)
+  {
+    ignition_input=2;
+    write("ignition is in pre running mode");
+  }
+  else if(@Ignition_swt::Ignition_swt==3)
+  {
+    ignition_input=3;
+    write("ignition is in  running mode");
+  }
+  else
+  {
+    ignition_input=0;
+    write("ignition is OFF mode");
+  }
+}
+
+on message Ignition_Input
+{
+   if(this.Ignition_Input_Siganl==1)
+  {
+    ignition_input=1;
+    
+  }
+  else if(this.Ignition_Input_Siganl==2)
+  {
+    ignition_input=2;
+  }
+  else if(this.Ignition_Input_Siganl==3)
+  {
+    ignition_input=3;
+  }
+  else
+  {
+    ignition_input=0;
+   // @HeadLight_swt::HeadLight_swt=0;
+    //@Position_light_ststus::Position_light_ststus=0;
+    //@lowbeam_light_ststus::lowbeam_light_ststus=0;
+    //@highbeam_light_ststus::highbeam_light_ststus=0;
+  }
+}
+on timer ignition_timer
+{
+  ignition_msg.Ignition_Input_Siganl=ignition_input;
+  output(ignition_msg);
+}
+on start
+{
+  setTimerCyclic(ignition_timer,200);
+}
+

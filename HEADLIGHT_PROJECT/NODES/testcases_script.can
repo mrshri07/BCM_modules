@@ -1,0 +1,180 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  const int wait_timeout=300;
+  long waitresult;
+  int window_up;
+}
+
+void maintest()
+{
+  testModuleTitle("LCM test");
+  testModuleDescription("test cases written in capl");
+  testReportAddEngineerInfo("DPIT","vector");
+  testReportAddEngineerInfo("NAME","sumiya banu");
+  testReportAddEngineerInfo("version","17");
+  testWaitForTimeout(200);
+  testGroupBegin("simulation of signals","Test node communication");
+  tc_ignition();
+  test_exterior_light();
+   ignitionoff();
+}
+
+testcase   tc_ignition()
+
+{
+  dword index=0;
+  float ingition;
+  float head_li;
+  testCaseTitle("key position test","ignition");
+  
+  testStep("test step1","setsysvar=0");
+  sysSetVariableInt(sysvar::Ignition_swt::Ignition_swt,0);
+  waitresult=testWaitForSysVar(sysvar::Ignition_swt::Ignition_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::Ignition_swt::Ignition_swt);
+
+  index=testWaitForAnyJoinedEvent(250);
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step1","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,ingition);
+        if(!ingition)
+       
+          testStepPass("Test Step1","Switch is working fine");
+        else
+         testStepFail("Test Step 1","Switch is not working");
+       
+  }
+  testWaitForTimeout(wait_timeout);
+  
+testStep("test step2","setsysvar=1");
+  sysSetVariableInt(sysvar::Ignition_swt::Ignition_swt,1);
+
+  waitresult=testWaitForSysVar(sysvar::Ignition_swt::Ignition_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::Ignition_swt::Ignition_swt);
+
+  index=testWaitForAnyJoinedEvent(250);
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step2","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,ingition);
+        if(@Ignition_swt::Ignition_swt==1)
+       
+          testStepPass("Test Step2","Switch is working fine");
+        else
+         testStepFail("Test Step 2","Switch is not working");
+      
+  }
+  testWaitForTimeout(wait_timeout);
+}
+
+
+
+testcase test_exterior_light()
+{
+  dword index=0;
+  float head_light;
+  testCaseTitle("head light position test","head light");
+  
+  testStep("test step1","setsysvar=1");
+  sysSetVariableInt(sysvar::HeadLight_swt::HeadLight_swt,1);
+  waitresult=testWaitForSysVar(sysvar::HeadLight_swt::HeadLight_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::HeadLight_swt::HeadLight_swt);
+
+  index=testWaitForAnyJoinedEvent(250);
+  
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step2","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,head_light);
+        
+        {
+        if(@HeadLight_swt::HeadLight_swt==1)
+       
+          testStepPass("Test Step2","Switch is working fine");
+        else
+         testStepFail("Test Step 2","Switch is not working");
+        }
+  }
+  testWaitForTimeout(wait_timeout);
+  
+   
+  testStep("test step2","setsysvar=2");
+  sysSetVariableInt(sysvar::HeadLight_swt::HeadLight_swt,2);
+  waitresult=testWaitForSysVar(sysvar::HeadLight_swt::HeadLight_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::HeadLight_swt::HeadLight_swt);
+
+  index=testWaitForAnyJoinedEvent(250);
+  
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step2","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,head_light);
+        
+        {
+        if(@HeadLight_swt::HeadLight_swt==2)
+       
+          testStepPass("Test Step2","Switch is working fine");
+        else
+         testStepFail("Test Step 2","Switch is not working");
+        }
+  }
+  testWaitForTimeout(wait_timeout);
+  
+   
+  testStep("test step3","setsysvar=3");
+  //sysSetVariableInt(sysvar::Ignition_sysvar::Ignition_sysvar,1);
+  sysSetVariableInt(sysvar::HeadLight_swt::HeadLight_swt,3);
+  waitresult=testWaitForSysVar(sysvar::HeadLight_swt::HeadLight_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::HeadLight_swt::HeadLight_swt);
+
+  index=testWaitForAnyJoinedEvent(250);
+  
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step3","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,head_light);
+        
+        {
+        if(@HeadLight_swt::HeadLight_swt==3)
+       
+          testStepPass("Test Step3","Switch is working fine");
+        else
+         testStepFail("Test Step3","Switch is not working");
+        }
+  }
+}
+
+testcase ignitionoff()
+{
+dword index=0;
+  float ingition;
+  testCaseTitle("key position test","ignition");
+  testStep("test step1","setsysvar=0");
+  sysSetVariableInt(sysvar::Ignition_swt::Ignition_swt,0);
+  waitresult=testWaitForSysVar(sysvar::Ignition_swt::Ignition_swt,wait_timeout);
+  testJoinSysVarEvent(sysvar::Ignition_swt::Ignition_swt);
+ 
+  index=testWaitForAnyJoinedEvent(250);
+  switch(waitresult)
+  {
+    case 0: testStepFail("test step1","sysvar is not recieved");
+      break;
+      case 1: testGetWaitEventEnvVarData(index,ingition);
+        if(!ingition)
+          testStepPass("Test Step1","Switch is working fine");
+        else
+         testStepFail("Test Step 1","Switch is not working");
+  }
+  testWaitForTimeout(wait_timeout);
+}

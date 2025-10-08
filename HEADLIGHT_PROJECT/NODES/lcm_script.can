@@ -1,0 +1,58 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  int ignition_input;
+  int exterior_input;
+  int position_light;
+  int lowbeam_input;
+  int highbeam_input;
+}
+on message ExtLiSwtSts
+{
+  if(this.Position_Light_Signal==1)
+  {
+    
+   position_light=1;// global variable
+   @Position_light_ststus::Position_light_ststus=1;// sstem variable
+  }
+  else 
+  {
+    position_light=0;
+    @Position_light_ststus::Position_light_ststus=0;
+  }
+
+  if(this.Lowbeam_Light_Signal==1)
+  {
+    lowbeam_input=1;
+    @lowbeam_light_ststus::lowbeam_light_ststus=1;
+  }
+  else
+  {
+    lowbeam_input=0;
+    @lowbeam_light_ststus::lowbeam_light_ststus=0;
+  }
+  
+ if(this.Highbeam_Light_Signal==1)
+ {
+   highbeam_input=1;
+   @highbeam_light_ststus::highbeam_light_ststus=1;
+ }
+ else {
+   highbeam_input=0;
+   @highbeam_light_ststus::highbeam_light_ststus=0;
+ }
+
+
+if(@Ignition_swt::Ignition_swt==0)
+{
+  @HeadLight_swt::HeadLight_swt=0;
+  @Position_light_ststus::Position_light_ststus=0;
+  @lowbeam_light_ststus::lowbeam_light_ststus=0;
+  @highbeam_light_ststus::highbeam_light_ststus=0;
+}
+}

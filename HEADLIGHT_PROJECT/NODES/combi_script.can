@@ -1,0 +1,66 @@
+﻿/*@!Encoding:65001*/
+includes
+{
+  
+}
+
+variables
+{
+  message ExtLiSwtSts exterior_msg;
+  int Exterior_input;
+  int position_light;
+  int lowbeam_light;
+  int highbeam_light;
+  msTimer Exterior_timer;
+}
+
+on sysvar HeadLight_swt::HeadLight_swt
+{
+  if($Ignition_Input_Siganl==1)
+  if(@HeadLight_swt::HeadLight_swt==1)
+  {
+    position_light=1;
+    lowbeam_light=0;
+    highbeam_light=0;
+    write("position light is on");
+  }
+  else if(@HeadLight_swt::HeadLight_swt==2)
+  {
+    position_light=1;
+    lowbeam_light=1;
+    highbeam_light=0;
+    write("lowbeam light is on");
+  }
+  else if(@HeadLight_swt::HeadLight_swt==3)
+  {
+     position_light=1;
+    lowbeam_light=1;
+    highbeam_light=1;
+    write("highbeam light is on");
+  }
+  else
+  {
+     position_light=0;
+    lowbeam_light=0;
+    highbeam_light=0;
+  }
+  
+}
+
+
+on timer Exterior_timer
+{
+  
+  exterior_msg.Position_Light_Signal=position_light;
+  output(exterior_msg);
+  exterior_msg.Lowbeam_Light_Signal=lowbeam_light;
+  output(exterior_msg);
+  exterior_msg.Highbeam_Light_Signal=highbeam_light;
+  output(exterior_msg);
+  
+
+}
+on start
+{
+  setTimerCyclic(Exterior_timer,100);
+}

@@ -1,0 +1,61 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: BCM LCM COMBI
+VAL_TABLE_ Ignition_Val_Table 5 "Not_Available" 4 "Error" 3 "Start" 2 "ON" 1 "Accessory" 0 "OFF" ;
+VAL_TABLE_ Highbeam_Lig_Val_Table 3 "Not_Available" 2 "Error" 1 "Highbeam_Lig_ON" 0 "Highbeam_Lig_OFF" ;
+VAL_TABLE_ Lowbeam_Lig_Val_Table 3 "Not Avialable" 2 "Error" 1 "Lowbeam_Lig_ON" 0 "Lowbeam_Lig_OFF" ;
+VAL_TABLE_ position_lig_val_table 3 "Not Avialable" 2 "Error" 1 "Position_light_ON" 0 "Position_light_OFF" ;
+
+
+BO_ 292 Ignition_Input: 1 BCM
+ SG_ Ignition_Input_Siganl : 0|3@1- (1,0) [0|5] "" Vector__XXX
+
+BO_ 273 ExtLiSwtSts: 2 COMBI
+ SG_ Position_Light_Signal : 8|3@1- (1,0) [0|4] "" Vector__XXX
+ SG_ Lowbeam_Light_Signal : 3|3@1- (1,0) [0|4] "" Vector__XXX
+ SG_ Highbeam_Light_Signal : 0|3@1- (1,0) [0|4] "" Vector__XXX
+
+
+
+BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
+BA_DEF_  "BusType" STRING ;
+BA_DEF_DEF_  "MultiplexExtEnabled" "No";
+BA_DEF_DEF_  "BusType" "CAN";
+VAL_ 292 Ignition_Input_Siganl 5 "Not_Available" 4 "Error" 3 "Start" 2 "ON" 1 "Accessory" 0 "OFF" ;
+VAL_ 273 Position_Light_Signal 3 "Not Avialable" 2 "Error" 1 "Position_light_ON" 0 "Position_light_OFF" ;
+VAL_ 273 Lowbeam_Light_Signal 3 "Not Avialable" 2 "Error" 1 "Lowbeam_Lig_ON" 0 "Lowbeam_Lig_OFF" ;
+VAL_ 273 Highbeam_Light_Signal 3 "Not_Available" 2 "Error" 1 "Highbeam_Lig_ON" 0 "Highbeam_Lig_OFF" ;
+
