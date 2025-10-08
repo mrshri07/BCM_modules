@@ -1,0 +1,1 @@
+extern void power_window_reporterror(void);

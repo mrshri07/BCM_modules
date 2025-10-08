@@ -1,0 +1,23 @@
+Start testing: Jun 27 16:29 India Standard Time
+----------------------------------------------------------
+1/1 Testing: powerwindowstests
+1/1 Test: powerwindowstests
+Command: "E:/C-Programming/C-Programming/power_windows/build/test/powerwindowstests.exe"
+Directory: E:/C-Programming/C-Programming/power_windows/build/test
+"powerwindowstests" start time: Jun 27 16:29 India Standard Time
+Output:
+----------------------------------------------------------
+Running main() from E:/C-Programming/C-Programming/power_windows/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from Example_test_t
+[ RUN      ] Example_test_t.frnt_left_power_windows2
+<end of output>
+Test time =   0.08 sec
+----------------------------------------------------------
+Test Failed.
+"powerwindowstests" end time: Jun 27 16:29 India Standard Time
+"powerwindowstests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 27 16:29 India Standard Time

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240627-0428-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.28.1"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="DESKTOP-HMVI89J"
+	OSRelease=" Professional"
+	OSVersion=" (Build 19045)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="14"
+	ProcessorCacheSize="-1"
+	NumberOfLogicalCPU="4"
+	NumberOfPhysicalCPU="4"
+	TotalVirtualMemory="18729"
+	TotalPhysicalMemory="16297"
+	LogicalProcessorsPerPhysical="1"
+	ProcessorClockFrequency="3408"
+	>
+	<Testing>
+		<StartDateTime>Jun 27 16:29 India Standard Time</StartDateTime>
+		<StartTestTime>1719485989</StartTestTime>
+		<TestList>
+			<Test>./test/powerwindowstests</Test>
+		</TestList>
+		<Test Status="failed">
+			<Name>powerwindowstests</Name>
+			<Path>./test</Path>
+			<FullName>./test/powerwindowstests</FullName>
+			<FullCommandLine>E:\C-Programming\C-Programming\power_windows\build\test\powerwindowstests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="text/string" name="Exit Code">
+					<Value>SEGFAULT</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Exit Value">
+					<Value>3221225477</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0776033</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>E:\C-Programming\C-Programming\power_windows\build\test\powerwindowstests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJxdT8sKwjAQvOcr9qiHtuhR8CTiTaTgqZQQ6zYEkt2SpNbPty9K7ZxmmWFmNm+JDGlwytBuD7VnB9dTdkkenrVXzvXi5mq4Qy87Q2/uQqaZtcWIIa5p8FWmByaH4LSqRHFeUEI+tx5g8EytMw+tiZiKIllQws3yS9lJR/oYz+SQei/GpG025nXm9atcY1GOS6IoIH/eYUS50dLaU5QW6yj//juKHyW+Yzs=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jun 27 16:29 India Standard Time</EndDateTime>
+		<EndTestTime>1719485989</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

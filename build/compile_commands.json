@@ -1,0 +1,38 @@
+[
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/googletest/googlemock",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/gmock.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock.dir/src/gmock-all.cc.obj -c E:/C-Programming/C-Programming/power_windows/googletest/googlemock/src/gmock-all.cc",
+  "file": "E:/C-Programming/C-Programming/power_windows/googletest/googlemock/src/gmock-all.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.obj"
+},
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/googletest/googlemock",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/gmock_main.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj -c E:/C-Programming/C-Programming/power_windows/googletest/googlemock/src/gmock_main.cc",
+  "file": "E:/C-Programming/C-Programming/power_windows/googletest/googlemock/src/gmock_main.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj"
+},
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/googletest/googletest",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/gtest.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest.dir/src/gtest-all.cc.obj -c E:/C-Programming/C-Programming/power_windows/googletest/googletest/src/gtest-all.cc",
+  "file": "E:/C-Programming/C-Programming/power_windows/googletest/googletest/src/gtest-all.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+},
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/googletest/googletest",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/gtest_main.dir/includes_CXX.rsp -g -std=c++14 -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=0 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj -c E:/C-Programming/C-Programming/power_windows/googletest/googletest/src/gtest_main.cc",
+  "file": "E:/C-Programming/C-Programming/power_windows/googletest/googletest/src/gtest_main.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj"
+},
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/power_windows_cntrl",
+  "command": "C:/msys64/ucrt64/bin/cc.exe   -g -std=gnu99 -o CMakeFiles/power_windows.dir/power_window.c.obj -c E:/C-Programming/C-Programming/power_windows/power_windows_cntrl/power_window.c",
+  "file": "E:/C-Programming/C-Programming/power_windows/power_windows_cntrl/power_window.c",
+  "output": "power_windows_cntrl/CMakeFiles/power_windows.dir/power_window.c.obj"
+},
+{
+  "directory": "E:/C-Programming/C-Programming/power_windows/build/test",
+  "command": "C:/msys64/ucrt64/bin/c++.exe  @CMakeFiles/powerwindowstests.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles/powerwindowstests.dir/power_windowstests.cpp.obj -c E:/C-Programming/C-Programming/power_windows/test/power_windowstests.cpp",
+  "file": "E:/C-Programming/C-Programming/power_windows/test/power_windowstests.cpp",
+  "output": "test/CMakeFiles/powerwindowstests.dir/power_windowstests.cpp.obj"
+}
+]

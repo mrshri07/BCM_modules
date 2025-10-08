@@ -1,0 +1,57 @@
+Start testing: Jun 25 10:36 India Standard Time
+----------------------------------------------------------
+1/1 Testing: powerwindowstests
+1/1 Test: powerwindowstests
+Command: "E:/C-Programming/C-Programming/power_windows/build/test/powerwindowstests.exe"
+Directory: E:/C-Programming/C-Programming/power_windows/build/test
+"powerwindowstests" start time: Jun 25 10:36 India Standard Time
+Output:
+----------------------------------------------------------
+[==========] Running 8 tests from 2 test suites.
+[----------] Global test environment set-up.
+[----------] 4 tests from Example_test_t
+[ RUN      ] Example_test_t.frnt_left_power_windows
+0 1 2 3 4 5 6 7 8 
+Front left power window is fully up
+[       OK ] Example_test_t.frnt_left_power_windows (0 ms)
+[ RUN      ] Example_test_t.frnt_right_power_windows
+8 7 6 5 4 3 2 1 0 
+Window stopped at position 0
+
+Front right power window is fully down
+[       OK ] Example_test_t.frnt_right_power_windows (0 ms)
+[ RUN      ] Example_test_t.rear_left_power_windows
+8 7 6 5 4 3 2 1 0 
+Window stopped at position 0
+
+Rear left power window is fully down
+[       OK ] Example_test_t.rear_left_power_windows (0 ms)
+[ RUN      ] Example_test_t.rear_right_power_windows
+0 1 2 3 4 5 6 7 8 
+Rear right power window is fully up
+[       OK ] Example_test_t.rear_right_power_windows (0 ms)
+[----------] 4 tests from Example_test_t (0 ms total)
+
+[----------] 4 tests from ExampleTests_T
+[ RUN      ] ExampleTests_T.test_power_window_oor
+[       OK ] ExampleTests_T.test_power_window_oor (0 ms)
+[ RUN      ] ExampleTests_T.testfrnt_right_power_window_oor
+[       OK ] ExampleTests_T.testfrnt_right_power_window_oor (0 ms)
+[ RUN      ] ExampleTests_T.testrear_left_power_window_oor
+[       OK ] ExampleTests_T.testrear_left_power_window_oor (0 ms)
+[ RUN      ] ExampleTests_T.testrear_right_power_window_oor
+[       OK ] ExampleTests_T.testrear_right_power_window_oor (0 ms)
+[----------] 4 tests from ExampleTests_T (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 8 tests from 2 test suites ran. (0 ms total)
+[  PASSED  ] 8 tests.
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"powerwindowstests" end time: Jun 25 10:36 India Standard Time
+"powerwindowstests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 25 10:36 India Standard Time

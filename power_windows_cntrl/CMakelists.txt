@@ -1,0 +1,8 @@
+set(Headers
+    power_window.h  
+)
+set(Sources
+    power_window.c
+)
+
+add_library(${This} STATIC ${Sources} ${Headers})
