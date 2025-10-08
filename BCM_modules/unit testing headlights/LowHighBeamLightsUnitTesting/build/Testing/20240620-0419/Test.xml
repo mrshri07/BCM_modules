@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="(empty)"
+	BuildStamp="20240620-0419-Experimental"
+	Name="(empty)"
+	Generator="ctest-3.29.0-rc2"
+	CompilerName=""
+	CompilerVersion=""
+	OSName="Windows"
+	Hostname="Rupa"
+	OSRelease=" Personal"
+	OSVersion=" (Build 22631)"
+	OSPlatform="AMD64"
+	Is64Bits="1"
+	VendorString="AuthenticAMD"
+	VendorID="Advanced Micro Devices"
+	FamilyID="15"
+	ModelID="8"
+	ProcessorCacheSize="64"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="19813"
+	TotalPhysicalMemory="5989"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="2096"
+	>
+	<Testing>
+		<StartDateTime>Jun 20 10:44 India Standard Time</StartDateTime>
+		<StartTestTime>1718860452</StartTestTime>
+		<TestList>
+			<Test>./tests/ExampleTests</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>ExampleTests</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/ExampleTests</FullName>
+			<FullCommandLine>D:\C-Programming\Module1\LowHighBeamLightsUnitTesting\build\tests\ExampleTests.exe</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.0374874</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>D:\C-Programming\Module1\LowHighBeamLightsUnitTesting\build\tests\ExampleTests.exe</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJydksFOwzAMhu95Ch/XQ1sqcULiAGwCiQFTt52qqsq6kEVK4ilJKY9Psk4VrQR0+JJY/vL/tuK80VpoDooKPYvg3aCC+U36EK8MckOV8sX0BfeNZFm6xPZJ8MM9o2rpT2e3WrgNsy5AHJFL5nz2/WpNnfJwq4JDUtekuO2jhPxsfw2BsZ1/dkrANsKxhBRxHyU8StxR2dWZ/hAGtWLas8zFzXEED0QXn1QdJQvd2mpDCsi3r3CKclRLJLbVzs9YyTCkR7t4e/4LhdkVKBtdIJ5doJ5NkT94cmrzI/Yf8r+3P4Z7g4mf1PHg0FEZkWmL4Bg18R5bPdyzH/cLDNXJ0MiPtLpbrxfzMP/5YUK+AOYZBSs=</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Jun 20 10:44 India Standard Time</EndDateTime>
+		<EndTestTime>1718860452</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>
