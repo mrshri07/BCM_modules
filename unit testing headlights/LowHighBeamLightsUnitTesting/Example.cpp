@@ -5,7 +5,11 @@
 enum ignition_swt {OFF, ACC, ON, START};
 enum Head_light_swt {pos_lig = 1, low_beam_light , high_beam_light };
 
-int ignition_Uwt;
+<<<<<<< HEAD
+int ignition_Zwt;
+=======
+int ignition_Ywt;
+>>>>>>> fe1a623c2598d81a955b63074b50dc50e6128c4e
 int head_light_swt;
 int low_beam_swt;
 int high_beam_swt;
